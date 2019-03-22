@@ -1,8 +1,8 @@
-package com.haicha.blockyroad;
+package blockyroad.BlockyRoad;
 
 import org.apache.logging.log4j.Logger;
 
-import com.haicha.blockyroad.proxy.CommonProxy;
+import blockyroad.BlockyRoad.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -29,7 +29,7 @@ public class BlockyRoad
     @Mod.Instance(MODID)
     public static BlockyRoad instance;
     
-    @SidedProxy(serverSide = "com.haicha.blockyroad.proxy.CommonProxy", clientSide = "com.haicha.blockyroad.proxy.ClientProxy")
+    @SidedProxy(serverSide = "blockyroad.BlockyRoad.proxy.CommonProxy", clientSide = "blockyroad.BlockyRoad.proxy.ClientProxy")
     public static CommonProxy proxy;
     
 
