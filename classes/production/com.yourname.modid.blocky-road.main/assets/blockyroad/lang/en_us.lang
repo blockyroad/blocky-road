@@ -12,6 +12,7 @@ item.enderstone_boots.name=Enderstone Boots
 
 #Tiles
 tile.enderstone_ore.name=Enderstone Ore
+tile.enderstone_block.name=Enderstone Block
 
 #Enchantments
 enchants.deep_digger.name=Deep Digger

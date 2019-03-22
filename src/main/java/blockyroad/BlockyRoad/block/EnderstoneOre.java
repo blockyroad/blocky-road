@@ -1,9 +1,6 @@
 package blockyroad.BlockyRoad.block;
 
-import java.util.Random;
-
 import blockyroad.BlockyRoad.ModItems;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,11 +11,13 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class EnderStoneOre extends BlockBase {
+import java.util.Random;
+
+public class EnderstoneOre extends BlockBase {
 	
 	protected float inputHardness;
 	
-	public EnderStoneOre(Material material, String name, float hardness, float resistance) {
+	public EnderstoneOre(Material material, String name, float hardness, float resistance) {
 		super(material, name);
 		setHardness(hardness);
 		setResistance(resistance);
@@ -26,7 +25,7 @@ public class EnderStoneOre extends BlockBase {
 	}
 	
 	@Override
-	public EnderStoneOre setCreativeTab(CreativeTabs tab) {
+	public EnderstoneOre setCreativeTab(CreativeTabs tab) {
 		super.setCreativeTab(tab);
 		return this;
 	}
