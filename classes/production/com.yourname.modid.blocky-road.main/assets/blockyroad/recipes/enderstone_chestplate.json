@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"E E",
+		"EEE",
+		"EEE"
+	],
+	"key": {
+		"E": {
+			"item": "blockyroad:enderstone"
+		}
+	},
+	"result": {
+		"item": "blockyroad:enderstone_chestplate"
+	}
+		
+}

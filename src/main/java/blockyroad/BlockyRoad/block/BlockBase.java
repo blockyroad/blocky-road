@@ -1,8 +1,8 @@
-package com.haicha.blockyroad.block;
+package blockyroad.BlockyRoad.block;
 
 import java.util.Random;
 
-import com.haicha.blockyroad.BlockyRoad;
+import blockyroad.BlockyRoad.BlockyRoad;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

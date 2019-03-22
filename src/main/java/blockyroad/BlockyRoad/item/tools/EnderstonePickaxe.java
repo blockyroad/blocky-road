@@ -1,7 +1,6 @@
-package com.haicha.blockyroad.item.tools;
+package blockyroad.BlockyRoad.item.tools;
 
-import com.haicha.blockyroad.BlockyRoad;
-import com.haicha.blockyroad.item.ItemBase;
+import blockyroad.BlockyRoad.BlockyRoad;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemPickaxe;

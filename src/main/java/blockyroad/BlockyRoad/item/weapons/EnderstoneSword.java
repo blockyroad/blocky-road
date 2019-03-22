@@ -1,6 +1,6 @@
-package com.haicha.blockyroad.item.weapons;
+package blockyroad.BlockyRoad.item.weapons;
 
-import com.haicha.blockyroad.BlockyRoad;
+import blockyroad.BlockyRoad.BlockyRoad;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSword;

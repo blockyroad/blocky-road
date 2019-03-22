@@ -1,9 +1,8 @@
-package com.haicha.blockyroad.item;
+package blockyroad.BlockyRoad.item;
 
-import com.haicha.blockyroad.BlockyRoad;
+import blockyroad.BlockyRoad.BlockyRoad;
 
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 
 public class ModItemArmor extends net.minecraft.item.ItemArmor {
 	

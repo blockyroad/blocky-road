@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" E ",
+		" E ",
+		" B "
+	],
+	"key": {
+		"E": {
+			"item": "blockyroad:enderstone"
+		},
+		"B": {
+			"item": "minecraft:blaze_rod"
+		}
+	},
+	"result": {
+		"item": "blockyroad:enderstone_sword"
+	}
+		
+}

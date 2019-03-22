@@ -1,4 +1,4 @@
-package com.haicha.blockyroad.enchantments;
+package blockyroad.BlockyRoad.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;

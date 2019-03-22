@@ -1,4 +1,4 @@
-package com.haicha.blockyroad.entity.boss;
+package blockyroad.BlockyRoad.entity.boss;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.world.World;
