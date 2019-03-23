@@ -1,22 +1,17 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
+#first ignore everything, then define what not to ignore
+/*
 
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
+#folders
+!/src
+!/gradle/wrapper
 
-# gradle
-build
-.gradle
-
-# other
-eclipse
-run
+#files
+!.gitignore
+!CREDITS.txt
+!LICENSE.txt
+!README.md
+!README.txt
+!build.gradle
+!gradle.properties
+!gradlew
+!gradlew.bat
