@@ -2,11 +2,14 @@
 /*
 
 #folders
-!/classes
 !/src
 !/gradle/wrapper
 
 #files
+!LICENSE-Paulscode IBXM Library.txt
+!LICENSE-Paulscode SoundSystem CodecIBXM.txt
+!forge-1.12.2-14.23.5.2768-changelog.txt
+
 !.gitignore
 !CREDITS.txt
 !LICENSE.txt
