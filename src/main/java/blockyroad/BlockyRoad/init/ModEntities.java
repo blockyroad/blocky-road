@@ -1,4 +1,56 @@
 package blockyroad.BlockyRoad.init;
 
+import blockyroad.BlockyRoad.BlockyRoad;
+import blockyroad.BlockyRoad.entity.passive.EntityGoldenSheep;
+import com.google.common.collect.ImmutableSet;
+import jdk.nashorn.internal.ir.Block;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
+import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
+import net.minecraftforge.registries.IForgeRegistry;
+
+import java.util.Set;
+
+@ObjectHolder(BlockyRoad.MODID)
 public class ModEntities {
+
+    public static final EntityEntry GOLDEN_SHEEP = null;
+
+    @Mod.EventBusSubscriber(modid = BlockyRoad.MODID)
+    public static class RegistrationHandler{
+
+        static final Set<EntityEntry> ENTITY_SET = ImmutableSet.of(
+                EntityEntryBuilder.create()
+                .entity(EntityGoldenSheep.class)
+                .id(new ResourceLocation("sheep"),0)
+                .name("golden_sheep")
+                .tracker(80, 3, false)
+                .egg(MapColor.BLUE.colorValue, MapColor.YELLOW.colorValue)
+                .spawn(EnumCreatureType.CREATURE, 20, 5, 10, BiomeDictionary.getBiomes(BiomeDictionary.Type.PLAINS))
+                .build()
+        );
+
+        @SubscribeEvent
+        public static void registerEntities(final RegistryEvent.Register<EntityEntry> evt){
+
+            final IForgeRegistry<EntityEntry> registry = evt.getRegistry();
+
+//            DEBUG
+            System.out.println("Registering entities");
+
+            for (final EntityEntry entityEntry : ENTITY_SET){
+//                DEBUG
+                System.out.println("Registering entity = " + entityEntry.getEntityClass());
+
+                registry.register(entityEntry);
+            }
+        }
+    }
 }
