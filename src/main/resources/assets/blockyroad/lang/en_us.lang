@@ -9,6 +9,10 @@ item.enderstone_helmet.name=Enderstone Helmet
 item.enderstone_chestplate.name=Enderstone Chestplate
 item.enderstone_leggings.name=Enderstone Leggings
 item.enderstone_boots.name=Enderstone Boots
+item.enderstone_wand.name=Enderstone Wand
+item.iron_wand.name=Iron Wand
+item.gold_wand.name=Gold Wand
+item.diamond_wand.name=Diamond Wand
 
 #Tiles
 tile.enderstone_ore.name=Enderstone Ore

@@ -8,6 +8,7 @@ import blockyroad.BlockyRoad.item.tools.EnderstonePickaxe;
 import blockyroad.BlockyRoad.item.tools.EnderstoneShovel;
 import blockyroad.BlockyRoad.item.weapons.EnderstoneSword;
 
+import blockyroad.BlockyRoad.item.weapons.wands.Wand;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -41,6 +42,12 @@ public class ModItems {
 	public static ModItemArmor enderStoneLeggings = new ModItemArmor(ENDERSTONEARMOR, EntityEquipmentSlot.LEGS, "enderstone_leggings");
 	public static ModItemArmor enderStoneBoots = new ModItemArmor(ENDERSTONEARMOR, EntityEquipmentSlot.FEET, "enderstone_boots");
 
+	//wands
+	public static Wand ironWand = new Wand("iron_wand", 1, 1);
+	public static Wand goldWand = new Wand("gold_wand", 2, 1);
+	public static Wand diamondWand = new Wand("diamond_wand", 3, 1);
+	public static Wand enderStoneWand = new Wand("enderstone_wand", 4, 1);
+
 	//------------------registry-------------------
 	public static void register(IForgeRegistry<Item> registry) {
 		registry.registerAll(
@@ -56,7 +63,13 @@ public class ModItems {
 				enderStoneHelmet,
 				enderStoneChestplate,
 				enderStoneLeggings,
-				enderStoneBoots
+				enderStoneBoots,
+
+				//wands
+				ironWand,
+				goldWand,
+				diamondWand,
+				enderStoneWand
 				);
 	}
 	
@@ -74,6 +87,12 @@ public class ModItems {
 		enderStoneChestplate.registerModel();
 		enderStoneLeggings.registerModel();
 		enderStoneBoots.registerModel();
+
+		//wands
+		ironWand.registerItemModel();
+		goldWand.registerItemModel();
+		diamondWand.registerItemModel();
+		enderStoneWand.registerItemModel();
 	}
 
 }
