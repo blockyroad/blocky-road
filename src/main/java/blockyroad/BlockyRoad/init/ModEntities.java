@@ -1,9 +1,10 @@
 package blockyroad.BlockyRoad.init;
 
 import blockyroad.BlockyRoad.BlockyRoad;
-import blockyroad.BlockyRoad.entity.passive.EntityGoldenSheep;
+import blockyroad.BlockyRoad.entity.passive.EntityGoldenSheepA;
+import blockyroad.BlockyRoad.entity.passive.EntityGoldenSheepB;
+import blockyroad.BlockyRoad.util.handlers.RenderHandler;
 import com.google.common.collect.ImmutableSet;
-import jdk.nashorn.internal.ir.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.ResourceLocation;
@@ -28,8 +29,8 @@ public class ModEntities {
 
         static final Set<EntityEntry> ENTITY_SET = ImmutableSet.of(
                 EntityEntryBuilder.create()
-                .entity(EntityGoldenSheep.class)
-                .id(new ResourceLocation("sheep"),0)
+                .entity(EntityGoldenSheepA.class)
+                .id(new ResourceLocation("blockyroad:golden_sheep"),0)
                 .name("golden_sheep")
                 .tracker(80, 3, false)
                 .egg(MapColor.BLUE.colorValue, MapColor.YELLOW.colorValue)
@@ -51,6 +52,7 @@ public class ModEntities {
 
                 registry.register(entityEntry);
             }
+            RenderHandler.registerEntityRenderers();
         }
     }
 }
