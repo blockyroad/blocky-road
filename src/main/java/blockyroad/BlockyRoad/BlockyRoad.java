@@ -1,8 +1,9 @@
 package blockyroad.BlockyRoad;
 
-import org.apache.logging.log4j.Logger;
+import blockyroad.BlockyRoad.proxy.IProxy;
 
-import blockyroad.BlockyRoad.proxy.CommonProxy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -30,7 +31,7 @@ public class BlockyRoad
     public static BlockyRoad instance;
     
     @SidedProxy(serverSide = "blockyroad.BlockyRoad.proxy.CommonProxy", clientSide = "blockyroad.BlockyRoad.proxy.ClientProxy")
-    public static CommonProxy proxy;
+    public static IProxy proxy;
     
 
     @Mod.EventHandler
@@ -76,4 +77,20 @@ public class BlockyRoad
     	}
     	
     }
+
+    private static Logger getLogger() {
+        if (logger == null) {
+            final Logger tempLogger = LogManager.getLogger();
+            tempLogger.error("[" + BlockyRoad.class.getSimpleName() + "]: getLogger called before logger has been initalised! Providing default logger");
+            return tempLogger;
+        }
+        return logger;
+    }
+
+    public static void info(final Object... messages) {
+        for (final Object msg : messages) {
+            getLogger().info(msg);
+        }
+    }
 }
+
