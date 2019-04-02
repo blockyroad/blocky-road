@@ -2,6 +2,8 @@ package blockyroad.BlockyRoad;
 
 import blockyroad.BlockyRoad.proxy.IProxy;
 
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,6 +55,10 @@ public class BlockyRoad
     
     @Mod.EventBusSubscriber
     public static class RegistrationHandler {
+
+		public static void registerItemModel(Item item, int meta, String id) {
+			ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(BlockyRoad.MODID + ":" + id, "inventory"));
+		}
     	
     	@SubscribeEvent
     	public static void registerItems(RegistryEvent.Register<Item> e) {

@@ -4,6 +4,19 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 
 public class ServerProxy implements IProxy{
+    @Override
+    public void preInit() {
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    @Override
+    public void postInit() {
+
+    }
 
     @Override
     public String localizeAndFormat(final String unlocalized, final Object... args) {

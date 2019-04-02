@@ -39,7 +39,7 @@ public class Wand extends Item {
 
     //model registry
     public void registerItemModel() {
-        BlockyRoad.proxy.registerItemRenderer(this, 0, name);
+        BlockyRoad.RegistrationHandler.registerItemModel(this, 0, name);
     }
 
     //tells minecraft to add an NBT tag to the wand containing what "spell" the wand is casting

@@ -16,7 +16,7 @@ public class ModItemArmor extends net.minecraft.item.ItemArmor {
 	}
 	
 	public void registerModel() {
-		BlockyRoad.proxy.registerItemRenderer(this, 0, name);
+		BlockyRoad.RegistrationHandler.registerItemModel(this, 0, name);
 	}
 	
 }

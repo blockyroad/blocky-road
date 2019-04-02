@@ -25,7 +25,7 @@ public class BlockBase extends Block {
 	}
 	
 	public void registerItemModel(Item itemBlock) {
-		BlockyRoad.proxy.registerItemRenderer(itemBlock, 0, name);
+		BlockyRoad.RegistrationHandler.registerItemModel(itemBlock, 0, name);
 	}
 	
 	public Item createItemBlock() {

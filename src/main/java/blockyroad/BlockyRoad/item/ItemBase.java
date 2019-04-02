@@ -21,7 +21,7 @@ public class ItemBase extends Item {
 	}
 
 	public void registerItemModel() {
-		BlockyRoad.proxy.registerItemRenderer(this, 0, name);
+		BlockyRoad.RegistrationHandler.registerItemModel(this, 0, name);
 	}
 
 	@Override

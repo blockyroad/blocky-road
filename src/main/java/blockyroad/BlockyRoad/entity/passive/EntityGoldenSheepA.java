@@ -10,12 +10,10 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -38,9 +36,9 @@ import javax.annotation.Nullable;
 
 public class EntityGoldenSheepA extends EntityAnimal implements net.minecraftforge.common.IShearable {
 
-    public static final ResourceLocation SHEARED_LOOT_TABLE = new ResourceLocation(BlockyRoad.MODID, "entities/golden_sheep/sheared");
+    public static final ResourceLocation SHEARED_LOOT_TABLE = new ResourceLocation(BlockyRoad.MODID, "loot_tables/entities/golden_sheep/sheared");
 
-    private static final DataParameter<Byte> DYE_COLOR = EntityDataManager.<Byte>createKey(EntityGoldenSheepA.class, DataSerializers.BYTE);
+    private static final DataParameter<Byte> SHEAR_DATA = EntityDataManager.<Byte>createKey(EntityGoldenSheepA.class, DataSerializers.BYTE);
 
     private int sheepTimer;
     private EntityAIEatGrass entityAIEatGrass;
@@ -86,20 +84,20 @@ public class EntityGoldenSheepA extends EntityAnimal implements net.minecraftfor
 
     public void setSheared(boolean sheared)
     {
-        byte b0 = ((Byte)this.dataManager.get(DYE_COLOR)).byteValue();
+        byte b0 = ((Byte)this.dataManager.get(SHEAR_DATA)).byteValue();
 
         if (sheared)
         {
-            this.dataManager.set(DYE_COLOR, Byte.valueOf((byte)(b0 | 16)));
+            this.dataManager.set(SHEAR_DATA, Byte.valueOf((byte)(b0 | 16)));
         }
         else
         {
-            this.dataManager.set(DYE_COLOR, Byte.valueOf((byte)(b0 & -17)));
+            this.dataManager.set(SHEAR_DATA, Byte.valueOf((byte)(b0 & -17)));
         }
     }
 
     public boolean getSheared() {
-        return (((Byte)this.dataManager.get(DYE_COLOR)).byteValue() & 16) != 0;
+        return (((Byte)this.dataManager.get(SHEAR_DATA)).byteValue() & 16) != 0;
     }
     /**
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
@@ -118,18 +116,18 @@ public class EntityGoldenSheepA extends EntityAnimal implements net.minecraftfor
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(12.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
     }
 
     protected void entityInit()
     {
         super.entityInit();
-        this.dataManager.register(DYE_COLOR, Byte.valueOf((byte)0));
+        this.dataManager.register(SHEAR_DATA, Byte.valueOf((byte)0));
     }
 
     public ResourceLocation getLootTable() {
-        return this.getSheared() ? SHEARED_LOOT_TABLE : new ResourceLocation(BlockyRoad.MODID, "entities/golden_sheep/gold");
+        return this.getSheared() ? SHEARED_LOOT_TABLE : new ResourceLocation(BlockyRoad.MODID, "loot_tables/entities/golden_sheep/gold");
     }
 
     @SideOnly(Side.CLIENT)

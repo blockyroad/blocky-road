@@ -16,7 +16,7 @@ public class EnderstoneHoe extends ItemHoe {
 	}
 
 	public void registerItemModel() {
-		BlockyRoad.proxy.registerItemRenderer(this, 0, name);
+		BlockyRoad.RegistrationHandler.registerItemModel(this, 0, name);
 	}
 
 	@Override

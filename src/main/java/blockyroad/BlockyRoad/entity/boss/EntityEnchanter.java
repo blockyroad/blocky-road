@@ -1,5 +1,6 @@
 package blockyroad.BlockyRoad.entity.boss;
 
+import blockyroad.BlockyRoad.BlockyRoad;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
@@ -14,7 +15,7 @@ import net.minecraft.world.World;
 
 public class EntityEnchanter extends EntityMob implements IRangedAttackMob {
 
-	public static final ResourceLocation LOOT_TABLE = null;
+	public static final ResourceLocation LOOT_TABLE = new ResourceLocation(BlockyRoad.MODID + "loot_tables/entities/enchanter/enchanter");
 
 	private EntityAIAttackRanged aiEnchantedBlast;
 

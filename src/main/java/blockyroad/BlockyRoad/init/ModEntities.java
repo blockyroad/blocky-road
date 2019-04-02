@@ -1,6 +1,7 @@
 package blockyroad.BlockyRoad.init;
 
 import blockyroad.BlockyRoad.BlockyRoad;
+import blockyroad.BlockyRoad.entity.boss.EntityEnchanter;
 import blockyroad.BlockyRoad.entity.passive.EntityGoldenSheepA;
 import blockyroad.BlockyRoad.entity.passive.EntityGoldenSheepB;
 import blockyroad.BlockyRoad.util.handlers.RenderHandler;
@@ -28,13 +29,22 @@ public class ModEntities {
     public static class RegistrationHandler{
 
         static final Set<EntityEntry> ENTITY_SET = ImmutableSet.of(
+//                Golden Sheep
                 EntityEntryBuilder.create()
                 .entity(EntityGoldenSheepA.class)
-                .id(new ResourceLocation("blockyroad:golden_sheep"),0)
+                .id(new ResourceLocation(BlockyRoad.MODID+"golden_sheep"),0)
                 .name("golden_sheep")
                 .tracker(80, 3, false)
                 .egg(MapColor.BLUE.colorValue, MapColor.YELLOW.colorValue)
                 .spawn(EnumCreatureType.CREATURE, 20, 5, 10, BiomeDictionary.getBiomes(BiomeDictionary.Type.PLAINS))
+                .build(),
+//                Enchanter Boss
+                EntityEntryBuilder.create()
+                .entity(EntityEnchanter.class)
+                .id(new ResourceLocation(BlockyRoad.MODID+"enchanter"),0)
+                .name("enchanter")
+                .tracker(80, 3, false)
+                .egg(MapColor.RED.colorValue, MapColor.YELLOW.colorValue)
                 .build()
         );
 

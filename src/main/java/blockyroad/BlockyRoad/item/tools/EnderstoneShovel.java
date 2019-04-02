@@ -2,6 +2,7 @@ package blockyroad.BlockyRoad.item.tools;
 
 import blockyroad.BlockyRoad.BlockyRoad;
 
+import blockyroad.BlockyRoad.proxy.ClientProxy;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSpade;
 
@@ -16,7 +17,7 @@ public class EnderstoneShovel extends ItemSpade {
 	}
 	
 	public void registerItemModel() {
-		BlockyRoad.proxy.registerItemRenderer(this, 0, name);
+		BlockyRoad.RegistrationHandler.registerItemModel(this, 0, name);
 	}
 	
 	@Override

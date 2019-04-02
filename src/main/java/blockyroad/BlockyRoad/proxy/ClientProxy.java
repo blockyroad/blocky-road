@@ -10,8 +10,18 @@ import net.minecraftforge.fml.relauncher.Side;
 
 public class ClientProxy implements IProxy {
 
-	public void registerItemRenderer(Item item, int meta, String id) {
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(BlockyRoad.MODID + ":" + id, "inventory"));
+	@Override
+	public void preInit() {
+	}
+
+	@Override
+	public void init() {
+
+	}
+
+	@Override
+	public void postInit() {
+
 	}
 
 	@Override
