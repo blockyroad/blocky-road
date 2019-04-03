@@ -4,6 +4,7 @@ import blockyroad.BlockyRoad.proxy.IProxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,26 +33,52 @@ public class BlockyRoad
     @Mod.Instance(MODID)
     public static BlockyRoad instance;
     
-    @SidedProxy(serverSide = "blockyroad.BlockyRoad.proxy.CommonProxy", clientSide = "blockyroad.BlockyRoad.proxy.ClientProxy")
+    @SidedProxy(
+    		serverSide = "blockyroad.BlockyRoad.proxy.ServerProxy",
+			clientSide = "blockyroad.BlockyRoad.proxy.ClientProxy"
+	)
     public static IProxy proxy;
     
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent e)
+	// preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the GameRegistry."
+    public void preInit(FMLPreInitializationEvent event)
     {
+		// DEBUG
+		System.out.println("preInit() " + event.getModMetadata().name);
+
     	GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
+		proxy.preInit(event);
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent e)
+	// Do your mod setup. Build whatever data structures you care about.
+	// Register network handlers
+    public void init(FMLInitializationEvent event)
     {
-    	
+		// DEBUG
+		System.out.println("init()");
+
+    	proxy.init(event);
     }
     
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent e) {
-    	
+	// postInit "Handle interaction with other mods, complete your setup based on this."
+    public void postInit(FMLPostInitializationEvent event) {
+		// DEBUG
+		System.out.println("postInit()");
+
+    	proxy.postInit(event);
     }
+
+	@Mod.EventHandler
+	public void serverStarting(FMLServerStartingEvent event)
+	{
+		// DEBUG
+		System.out.println("Server starting");
+
+		proxy.serverStarting(event);
+	}
     
     @Mod.EventBusSubscriber
     public static class RegistrationHandler {
